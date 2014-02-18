@@ -1,6 +1,6 @@
 export LC_CTYPE=en_US.UTF-8
 export CLICOLOR=1;
-export PATH=/opt/local/bin:/opt/local/sbin:/opt/subversion/bin:/usr/local/bin:/Applications/MAMP/bin/mysql:/Applications/MAMP/bin/php/php5.3.14/bin:/Applications/MAMP/bin/apache2:/Applications/MAMP/Library/bin:/usr/bin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:/opt/subversion/bin:/usr/local/bin:/Applications/MAMP/bin/mysql:/Applications/MAMP/bin/php/php5.3.27/bin:/Applications/MAMP/bin/apache2:/Applications/MAMP/Library/bin:/usr/bin:$PATH
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages 
 
 # Taken from http://github.com/twerth/dotfiles/blob/master/etc/bashrc
@@ -10,13 +10,14 @@ alias ll='ls -hl'
 alias la='ls -al'
 alias lla='ls -lah'
 alias l='LC_ALL=C ls -lah'
+alias gitp='git log --graph --pretty=format:'"'"'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"'"' --abbrev-commit'
 
 # Navigation -------------------------------------------------------
 alias ..='cd ..'
 alias ...='cd ../..'
 
 # Search -----------------------------------------------------------
-alias g='grep -ri'  # Case insensitive grep
+alias g='grep -ri --color=auto'  # Case insensitive grep
 gns(){ # Case insensitive, excluding svn folders
   find . -path '*/.svn' -prune -o -type f -print0 | xargs -0 grep -I -n -e "$1"
 }
