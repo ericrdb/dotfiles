@@ -1,6 +1,6 @@
 export LC_CTYPE=en_US.UTF-8
 export CLICOLOR=1;
-export PATH=/opt/local/bin:/opt/local/sbin:/opt/subversion/bin:/usr/local/bin:/Applications/MAMP/bin/mysql:/Applications/MAMP/bin/php/php5.3.27/bin:/Applications/MAMP/bin/apache2:/Applications/MAMP/Library/bin:/usr/bin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:/opt/subversion/bin:/usr/local/bin:/Applications/MAMP/bin/mysql:/Applications/MAMP/bin/php/php5.3.27/bin:/Applications/MAMP/bin/apache2:/Applications/MAMP/Library/bin:/usr/bin:/usr/local/opt/ruby/bin:$PATH
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages 
 
 # Taken from http://github.com/twerth/dotfiles/blob/master/etc/bashrc
@@ -54,3 +54,11 @@ alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' 
 # git bash completion
 source ~/.git-bash-completion.sh
 source ~/.bashrc_profile
+
+# vagrant auto completion
+# https://github.com/kura/vagrant-bash-completion
+# first: brew tap homebrew/completion
+# second: brew install vagrant-completion
+if [ -f `brew --prefix`/etc/bash_completion.d/vagrant ]; then
+    source `brew --prefix`/etc/bash_completion.d/vagrant
+fi
